@@ -1,0 +1,62 @@
+<%= form_with(model: movie, local: true) do |form| %>
+  <% if movie.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(movie.errors.count, "error") %> prohibited this movie from being saved:</h2>
+
+      <ul>
+      <% movie.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title, id: :movie_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cast %>
+    <%= form.text_field :cast, id: :movie_cast %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description, id: :movie_description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :movieurl %>
+    <%= form.text_field :movieurl, id: :movie_movieurl %>
+  </div>
+
+  <div class="field">
+    <%= form.label :posterurl %>
+    <%= form.text_field :posterurl, id: :movie_posterurl %>
+  </div>
+
+  <div class="field">
+    <%= form.label :caption1 %>
+    <%= form.text_area :caption1, id: :movie_caption1 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :caption2 %>
+    <%= form.text_area :caption2, id: :movie_caption2 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :rating %>
+    <%= form.text_field :rating, id: :movie_rating %>
+  </div>
+
+  <div class="field">
+    <%= form.label :reviews %>
+    <%= form.text_area :reviews, id: :movie_reviews %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
